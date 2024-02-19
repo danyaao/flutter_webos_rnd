@@ -1,0 +1,10 @@
+{
+  "id": "dev.surf.hosted",
+  "version": "0.0.1",
+  "vendor": "My Company",
+  "type": "web",
+  "main": "index.html",
+  "title": "hosted",
+  "icon": "Icon-512.png",
+  "largeIcon": "Icon-512.png"
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>new app</title>
+	<style type="text/css">
+		body {
+			width: 100%;
+			height: 100%;
+			background-color: #202020;
+		}
+
+		div {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			display: table;
+		}
+
+		h1 {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			color: #FFFFFF;
+		}
+	</style>
+</head>
+
+<script src="webOSTVjs-1.2.4/webOSTV.js" charset="utf-8"></script>
+<script src="webOSTVjs-1.2.4/webOSTV-dev.js" charset="utf-8"></script>
+<script type="text/javascript">
+	//sample code for calling LS2 API
+	webOS.service.request("luna://com.palm.systemservice", {
+		method: "clock/getTime",
+		parameters: {},
+		onSuccess: function (args) {
+			console.log("UTC:", args.utc);
+		},
+		onFailure: function (args) {
+			console.log("Failed to getTime");
+		}
+	});
+</script>
+<script>
+	// The value below is injected by flutter build, do not touch.
+	const serviceWorkerVersion = "3335173313";
+</script>
+<!-- This script adds the flutter initialization JS code -->
+<script src="flutter.js" defer></script>
+
+<body>
+	<script>
+		window.addEventListener('load', function (ev) {
+			// Download main.dart.js
+			_flutter.loader.loadEntrypoint({
+				serviceWorker: {
+					serviceWorkerVersion: serviceWorkerVersion,
+				},
+				onEntrypointLoaded: function (engineInitializer) {
+					engineInitializer.initializeEngine().then(function (appRunner) {
+						appRunner.runApp();
+					});
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>
